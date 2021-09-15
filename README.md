@@ -88,7 +88,7 @@ cni:
 2. Add the cn-series repo to your local Helm client
 
 ```bash
-$ helm repo add my-project https://paloaltonetworks.github.io/cn-series-helm
+$ helm repo add cn-series https://paloaltonetworks.github.io/cn-series-helm
 "cn-series" has been added to your repositories
 ```
 
@@ -109,8 +109,8 @@ $ kubectl config set-cluster NAME
 5. Deploy using the Helm chart repo
 
 ```bash
-$ helm install cn-series/cn-series --name="deployment name" \
---set cluster.deployTo="gke|eks|aks|openshift"
+$ helm install cn-series/cn-series --name-template="deployment name" \
+--set cluster.deployTo="gke|eks|aks|openshift" \
 --set panorama.ip="panorama hostname or ip" \
 --set panorama.ip2="panorama2 hostname or ip" \
 --set-string panorama.authKey="vm auth key" \
